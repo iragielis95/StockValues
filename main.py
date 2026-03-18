@@ -3,6 +3,25 @@ import pandas as pd
 import io
 import pyexcel as p
 
+def check_password():
+    def password_entered():
+        if st.session_state["password"] == st.secrets["auth"]["password"]:
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]
+        else:
+            st.session_state["password_correct"] = False
+
+    if "password_correct" not in st.session_state:
+        st.text_input("Password", type="password", on_change=password_entered, key="password")
+        st.stop()
+
+    if not st.session_state["password_correct"]:
+        st.text_input("Password", type="password", on_change=password_entered, key="password")
+        st.error("Incorrect password")
+        st.stop()
+
+check_password()
+
 # -----------------------------
 # CONFIG
 # -----------------------------
