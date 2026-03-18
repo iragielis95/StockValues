@@ -25,7 +25,7 @@ check_password()
 # -----------------------------
 # CONFIG
 # -----------------------------
-st.set_page_config(page_title="Warehouse Stock vs Insured Value", layout="wide")
+st.set_page_config(page_title="WLI Stock Values", layout="wide")
 
 # -----------------------------
 # DEFAULT EXCHANGE RATES
@@ -103,7 +103,6 @@ def load_excel_any_format(uploaded_file):
 # UI
 # -----------------------------
 st.title("WLI Stock Values")
-st.write("Upload your ERP stock file (.xls or .xlsx) and insured values file (.xlsx).")
 
 # -----------------------------
 # EXCHANGE RATE EDITOR (PERSISTENT)
